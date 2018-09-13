@@ -1,0 +1,8 @@
+{
+  "short_name": "rentspree-component-v2",
+  "name": "rentspree-component-v2",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

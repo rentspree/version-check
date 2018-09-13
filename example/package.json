@@ -1,0 +1,24 @@
+{
+  "name": "rentspree-versoin-check-example",
+  "homepage": "https://rentspree.github.io/rentspree-version-check",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "axios": "0.18.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "@rentspree/version-check": "file:..",
+    "styled-components": "^3.4.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "^1.1.4"
+  }
+}
