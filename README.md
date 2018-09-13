@@ -1,35 +1,20 @@
 # Rentspree-Version-Check
 
-> Version check component and auto refresh page for Rentspree application
+> Version check component and auto refresh page for React Application!
 
-[![NPM](https://img.shields.io/npm/v/rentspree-component-v2.svg)](https://www.npmjs.com/package/rentspree-component-v2) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/@rentspree/version-check.svg)](https://www.npmjs.com/package/@rentspree/version-check) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+## Overview
+
+When deploying a new React Application version, do you still assume all users will refresh to get the new version? Your assumption is right until you find that very user who open the browser for days without refreshing. And when you found it, it already causes you error in your application. So why bother?
+
+This Lib help React application periodically fetch an API server to get its version. It compares the version and execute refresh if a newer version is available!
 
 ## Install
 
-This Lib is hosted on [Gemfury](https://gemfury.com/) as a private repository
-
-To install this lib, you must grant Rentspree gemfury access to your npm
-
-First, you need to config npm to use gemfury proxy for @rentspree package namespace
-
-```bash
-npm config set @rentspree:registry https://npm-proxy.fury.io/rentspree/
 ```
-
-Then, login your gemfury account
-
-```bash
-npm login --registry https://npm-proxy.fury.io/rentspree/
+npm install @rentspree/version-check
 ```
-
-You'll be prompted to input your credentials.
-After that, it's good to go!
-
-```bash
-npm install --save @rentspree/component-v2
-```
-
-This should work for now!
 
 ## Prerequisites
 
@@ -75,15 +60,6 @@ class App extends React.Component {
 * `bottom` - absolute position from bottom in px
 * `left` - absolute position from left in px
 
-## UPDATE NEW VERSION
-1. To update version, we need to push new version to gemfury registry.
-we can doing it by
-
-    ```bash
-    npm version patch
-    ```
-
-2. Push to git normally
 
 ## License
 
