@@ -1,6 +1,6 @@
 {
   "name": "@rentspree/version-check",
-  "version": "0.0.1",
+  "version": "0.0.2-rc1",
   "description": "Component Version for project version check",
   "author": "rentspree",
   "license": "Rentspree",
@@ -38,7 +38,7 @@
     "axios": "^0.18.0"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
     "babel-plugin-external-helpers": "^6.22.0",
