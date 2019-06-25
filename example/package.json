@@ -1,7 +1,7 @@
 {
   "name": "rentspree-versoin-check-example",
   "homepage": "https://rentspree.github.io/rentspree-version-check",
-  "version": "0.0.2-rc2",
+  "version": "0.0.3",
   "license": "MIT",
   "private": true,
   "dependencies": {
