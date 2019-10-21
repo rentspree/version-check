@@ -48,7 +48,15 @@ export default class Version extends React.Component {
     const { version } = this.state
     if (version) {
       if (version !== newVersion) {
-        location.reload()
+        if (caches) {
+          // Service worker cache should be cleared with caches.delete()
+          caches.keys().then(names => {
+            if (names) names.forEach(name => caches.delete(name))
+          })
+        }
+
+        // delete browser cache and hard reload
+        location.reload(true)
       }
     }
     this.setState({ version: newVersion })
