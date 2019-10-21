@@ -41,14 +41,37 @@ describe("<Version>", () => {
     })
   })
   describe("#checkVersion", () => {
+    const mockCaches = {
+      keys: jest.fn(),
+      delete: jest.fn()
+    }
+    beforeEach(() => {
+      mockCaches.keys.mockReturnValue(
+        Promise.resolve(["test", "cache", "name"])
+      )
+      global.caches = mockCaches
+    })
     afterEach(() => {
       wrapper.setState({ version: null })
+      mockCaches.keys.mockClear()
+      mockCaches.delete.mockClear()
     })
     it("should call setState of version", () => {
       const spy = jest.spyOn(wrapper, "setState")
       wrapper.setState({ version: "0.0.1" })
       wrapper.instance().checkVersion("0.0.2")
       expect(spy).toBeCalledWith({ version: "0.0.2" })
+    })
+    it("should call caches key if caches is exist", () => {
+      wrapper.setState({ version: "0.0.1" })
+      wrapper.instance().checkVersion("0.0.2")
+      expect(mockCaches.keys).toBeCalled()
+    })
+    it("should not call caches key if caches is not exist", () => {
+      global.caches = undefined
+      wrapper.setState({ version: "0.0.1" })
+      wrapper.instance().checkVersion("0.0.2")
+      expect(mockCaches.keys).not.toBeCalled()
     })
   })
   describe("#componentDidMount", () => {
