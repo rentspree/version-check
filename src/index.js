@@ -31,7 +31,7 @@ export default class Version extends React.Component {
   callApi() {
     const { api } = this.props
     axios
-      .get(api)
+      .get(api, this.timestampConfig())
       .then(res => {
         if (res.status === 200) {
           this.checkVersion(res.data)
@@ -73,6 +73,10 @@ export default class Version extends React.Component {
 
   onIdle() {
     // logger.debug("User is idle", new Date())
+  }
+
+  timestampConfig() {
+    return { params: { t: new Date().getTime() } }
   }
 
   render() {
