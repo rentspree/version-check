@@ -96,4 +96,18 @@ describe("<Version>", () => {
       expect(wrapper.find(VersionTag)).toHaveLength(1)
     })
   })
+  describe("#timestampConfig", () => {
+    const originalDATE = global.Date
+    const fixedDate = new Date("10/24/2019")
+    beforeAll(() => {
+      global.Date = jest.fn(() => fixedDate)
+    })
+    afterAll(() => {
+      global.Date = originalDATE
+    })
+    it("should return current date", () => {
+      const timeStampParams = wrapper.instance().timestampConfig()
+      expect(timeStampParams).toEqual({ params: { t: fixedDate.getTime() } })
+    })
+  })
 })
