@@ -49,7 +49,7 @@ describe("<Version>", () => {
       mockCaches.keys.mockReturnValue(
         Promise.resolve(["test", "cache", "name"])
       )
-      global.caches = mockCaches
+      global.window.caches = mockCaches
     })
     afterEach(() => {
       wrapper.setState({ version: null })
@@ -68,7 +68,7 @@ describe("<Version>", () => {
       expect(mockCaches.keys).toBeCalled()
     })
     it("should not call caches key if caches is not exist", () => {
-      global.caches = undefined
+      global.window.caches = undefined
       wrapper.setState({ version: "0.0.1" })
       wrapper.instance().checkVersion("0.0.2")
       expect(mockCaches.keys).not.toBeCalled()
