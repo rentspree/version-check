@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const VersionTag = styled.div`
-  position: absolute;
+  position: fixed;
   color: ${props => (props.color ? props.color : "#444")};
   font-size: ${props => (props.size ? `${props.size}px` : "10px")};
   ${props => props.top && `top: ${props.top}px`};
