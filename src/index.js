@@ -50,8 +50,8 @@ export default class Version extends React.Component {
       if (version !== newVersion) {
         if (window && window.caches) {
           // Service worker cache should be cleared with caches.delete()
-          window.caches.keys().then(names => {
-            if (names) names.forEach(name => window.caches.delete(name))
+          window.caches.keys().then(keys => {
+            keys.forEach(key => window.caches.delete(key))
           })
         }
 
