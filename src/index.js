@@ -59,10 +59,10 @@ export default class Version extends React.Component {
         const { swUpdate } = this.props
         if (swUpdate) {
           swUpdate()
+        } else {
+          // delete browser cache and hard reload
+          location.reload(true)
         }
-
-        // delete browser cache and hard reload
-        location.reload(true)
       }
     }
     this.setState({ version: newVersion })
