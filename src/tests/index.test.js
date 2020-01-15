@@ -73,6 +73,13 @@ describe("<Version>", () => {
       wrapper.instance().checkVersion("0.0.2")
       expect(mockCaches.keys).not.toBeCalled()
     })
+    it("should call swUpdate if it is defined", () => {
+      const swUpdate = jest.fn()
+      wrapper.setProps({ swUpdate })
+      wrapper.setState({ version: "0.0.1" })
+      wrapper.instance().checkVersion("0.0.2")
+      expect(swUpdate).toBeCalled()
+    })
   })
   describe("#componentDidMount", () => {
     it("should call callApi", () => {

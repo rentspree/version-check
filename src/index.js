@@ -15,7 +15,8 @@ export default class Version extends React.Component {
     top: PropTypes.number,
     right: PropTypes.number,
     bottom: PropTypes.number,
-    left: PropTypes.number
+    left: PropTypes.number,
+    swUpdate: PropTypes.func
   }
 
   constructor(props) {
@@ -53,6 +54,11 @@ export default class Version extends React.Component {
           window.caches.keys().then(names => {
             if (names) names.forEach(name => window.caches.delete(name))
           })
+        }
+        // Use external service worker function to update a cache
+        const { swUpdate } = this.props
+        if (swUpdate) {
+          swUpdate()
         }
 
         // delete browser cache and hard reload
